@@ -11,7 +11,7 @@ router.post('/register',[
     check('password','El password no puede ser nulo').not().isEmpty(),
     validarCampos
 ], register);
-router.get('/',validarToken, renewJWT);
+router.get('/renew',validarToken, renewJWT);
 
 
 module.exports = router;

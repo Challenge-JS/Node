@@ -15,9 +15,9 @@ class Server {
        this.dbConnection();
     }
     middlewares(){
+        this.app.use(cors());
         this.app.use(express.static(path.resolve(__dirname,'../public')));
         this.app.use(express.json());
-        this.app.use(cors());
         this.app.use(this.auth,require('../routes/auth'));
         this.app.use(this.operacion,require('../routes/operacion'));
     }
