@@ -33,15 +33,22 @@ const newOperacion = async(req, res = response) => {
     try {
         req.body.idUser = req.usuario.id;
         const operacion = new Operacion(req.body);
-        await operacion.save();
-        operacion.Usuario = req.usuario;
+        if(req.body.tipo === 'INGRESO' || req.body.tipo === 'EGRESO'){
+            await operacion.save();
+            operacion.Usuario = req.usuario;
+            return res.json({
+                ok:true,
+                operacion:{
+                    ...operacion.dataValues,
+                    Usuario:req.usuario
+                }
+            })
+        }
         res.json({
-            ok:true,
-            operacion:{
-                ...operacion.dataValues,
-                Usuario:req.usuario
-            }
+            ok:false,
+            msg:'Ingrese tipo valido'
         })
+        
     } catch (error) {
         console.log(error)
         res.json({
