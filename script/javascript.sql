@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2021 a las 05:19:07
+-- Tiempo de generación: 29-08-2021 a las 06:07:41
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -52,14 +52,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`email`, `password`, `createdAt`, `updatedAt`, `id`) VALUES
-('test@tes.com', '123456', '2021-08-28 17:29:04', '2021-08-28 17:29:04', 6),
-('test@123.com', '123456', '2021-08-29 03:02:15', '2021-08-29 03:02:15', 7);
-
---
 -- Índices para tablas volcadas
 --
 
@@ -84,7 +76,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `operacions`
 --
 ALTER TABLE `operacions`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
